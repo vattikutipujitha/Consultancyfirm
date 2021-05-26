@@ -1,0 +1,203 @@
+package Project;
+import java.awt.event.ActionListener;
+import java.util.Random;
+import javax.swing.*; 
+import java.awt.*; 
+import java.awt.event.*; 
+public class Pro implements ActionListener {
+  JFrame f; 
+  JLabel l1,l2,l3,l5,l4,l6,l7,l8,l9; 
+  JTextField t1,t2,t4,t5,t6,t7,t8,t9; 
+  JButton b1,b2; 
+  JRadioButton r1,r2; 
+  ButtonGroup bg; 
+  JComboBox cb;
+public Pro() 
+  {
+     f=new JFrame(&quot; Interview &quot;); 
+     l1=new JLabel(&quot;Name&quot;); 
+     l2=new JLabel(&quot;Age&quot;); 
+     l3=new JLabel(&quot;Gender&quot;); 
+     l4=new JLabel(&quot;Qualification&quot;); 
+     l5=new JLabel(&quot;Experience&quot;); 
+     l6=new JLabel(&quot;Skills&quot;); 
+     l7=new JLabel(&quot;Hobbies&quot;); 
+     l8=new JLabel(&quot;Languages known&quot;); 
+     l9=new JLabel(&quot;Job Offers In The Company&quot;);
+     t1=new JTextField(20); 
+     t2=new JTextField(3);
+     t4=new JTextField(20);
+     t5=new JTextField(6);
+     t6=new JTextField(25);
+     t7=new JTextField(20);
+     t8=new JTextField(25);
+     r1=new JRadioButton(&quot;Male&quot;); 
+     r2=new JRadioButton(&quot;Female&quot;); 
+     bg=new ButtonGroup(); 
+     bg.add(r1); 
+     bg.add(r2);
+     b1=new JButton(&quot;Submit&quot;); 
+     b2=new JButton(&quot;Reset&quot;); 
+     cb=new JComboBox(); 
+     cb.addItem(&quot;Select&quot;); 
+     cb.addItem(&quot;Accountant:CA&quot;); 
+     cb.addItem(&quot;App Developer:B.Tech&quot;); 
+     cb.addItem(&quot;Database Administrator:B.Tech&quot;); 
+     cb.addItem(&quot;Software Developer:B.Tech&quot;);
+     cb.addItem(&quot;Web Developer:B.Tech&quot;); 
+     cb.addItem(&quot;Front End Developer:B.Tech&quot;); 
+     cb.addItem(&quot;Game Developer:B.Tech&quot;);
+     f.setLayout(null); 
+     f.setVisible(true); 
+     f.setSize(500,900);
+     f.setLocation(500,200); 
+     l1.setBounds(50,50,150,30);
+     t1.setBounds(250,50,200,30);
+     l2.setBounds(50,100,150,30);
+ t2.setBounds(250,100,200,30);
+ l3.setBounds(50,150,150,30);
+ r1.setBounds(250,150,200,30);
+ r2.setBounds(250,175,250,30);
+ l4.setBounds(50,225,150,30);
+ t4.setBounds(250,225,200,30);
+ l5.setBounds(50,275,150,30);
+ t5.setBounds(250,275,200,30);
+ l6.setBounds(50,325,150,30);
+ t6.setBounds(250,325,200,30);
+ l7.setBounds(50,375,150,30);
+ t7.setBounds(250,375,200,30);
+ l8.setBounds(50,425,150,30);
+ t8.setBounds(250,425,200,30);
+ l9.setBounds(50,475,150,30);
+ cb.setBounds(250,475,150,40);
+ b1.setBounds(50,575,150,40);
+ b2.setBounds(250,575,150,40);
+     f.add(l1); 
+     f.add(t1); 
+     f.add(l2); 
+     f.add(t2); 
+     f.add(l3);
+     f.add(r1); 
+     f.add(r2);
+     f.add(l4);
+     f.add(t4);
+     f.add(l5);
+     f.add(t5);
+     f.add(l6);
+     f.add(t6);
+     f.add(l7);
+     f.add(t7);
+     f.add(l8);
+     f.add(t8);
+     f.add(l9);
+     f.add(cb);
+     f.add(b1); 
+     f.add(b2); 
+   b1.addActionListener(this); 
+   b2.addActionListener(this);
+    } 
+  public static void main(String args[])
+  { 
+    Pro s=new Pro(); 
+  } 
+  public void  actionPerformed(ActionEvent e)
+  { 
+   if(e.getSource()==b1) 
+   { 
+    boolean filled=true; 
+    String id=t1.getText(); 
+    if(id.trim().equals(&quot;&quot;)) 
+    { 
+     filled=false; 
+     JOptionPane.showMessageDialog(t1,&quot;Enter your Name&quot;); 
+    } 
+     
+    String name=t2.getText(); 
+    if(name.trim().equals(&quot;&quot;)) 
+{
+     filled=false; 
+     JOptionPane.showMessageDialog(t2,&quot;Enter Your Age&quot;); 
+    } 
+    String q=t4.getText(); 
+    if(q.trim().equals(&quot;&quot;)) 
+    { 
+     filled=false;
+     JOptionPane.showMessageDialog(t4,&quot;Enter Your Qualification&quot;); 
+    } 
+    String ex=t5.getText(); 
+    if( ex.trim().equals(&quot;&quot;)) 
+    { 
+     filled=false; 
+     JOptionPane.showMessageDialog(t6,&quot;Enter Your Experience&quot;); 
+    } 
+    String a=t6.getText(); 
+    if(a.trim().equals(&quot;&quot;)) 
+    { 
+     filled=false; 
+     JOptionPane.showMessageDialog(t7,&quot;Enter Your Skills&quot;); 
+    } 
+    String hob=t7.getText(); 
+    if(hob.trim().equals(&quot;&quot;)) 
+    { 
+     filled=false; 
+     JOptionPane.showMessageDialog(t8,&quot;Enter Your Language&quot;); 
+    }    
+    int select=cb.getSelectedIndex(); 
+    if(select==0) 
+    { 
+     filled=false; 
+     JOptionPane.showMessageDialog(cb,&quot;Select Your Job According To The
+Qualification&quot;); 
+    } 
+    String l=t8.getText(); 
+    if(l.trim().equals(&quot;&quot;)) 
+    { 
+     filled=false; 
+     JOptionPane.showMessageDialog(t9,&quot;Enter Your Hobbies&quot;); 
+    } 
+    if(filled==true) { 
+    System.out.println(t1.getText()); 
+    System.out.println(t2.getText());
+    if(r1.isSelected()) 
+        System.out.println(&quot;Male&quot;); 
+    if(r2.isSelected()) 
+        System.out.println(&quot;Female&quot;); 
+    System.out.println(t4.getText());
+    System.out.println(t5.getText());
+    System.out.println(t6.getText());
+    System.out.println(t7.getText());
+    System.out.println(t8.getText());
+    System.out.println(cb.getSelectedItem().toString()); 
+    Random rand = new Random();
+    int rand_int1 = rand.nextInt(1000);
+    String str;
+    if(rand_int1%2==0) 
+    {
+       str=&quot;Selected For The Interview&quot;;
+       System.out.println(&quot;Selected For The Interview&quot;);
+    }
+    else
+    {
+    str=(&quot;Not Selected For The Interview&quot;);
+    System.out.println(&quot;Not Selected For The Interview&quot;);
+    }
+    JOptionPane.showMessageDialog(b1,str); 
+  
+    }   
+   } 
+    
+   else if(e.getSource()==b2) 
+   { 
+    t1.setText(&quot;&quot;); 
+    t2.setText(&quot;&quot;); 
+    t4.setText(&quot;&quot;); 
+    t5.setText(&quot;&quot;); 
+    t6.setText(&quot;&quot;); 
+    t7.setText(&quot;&quot;); 
+    t8.setText(&quot;&quot;); 
+    cb.setSelectedIndex(0); 
+    r1.setSelected(true); 
+   } 
+   
+  } 
+}
